@@ -34,7 +34,7 @@ app.set(path.join(__dirname), "views")
 
 //!------------------connecting to DB------------------------------------
 // connection URL
-const url = process.env.DB_CON_STRING;
+const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@mongodb-demo.k0ejzwo.mongodb.net/BlogAppDB?retryWrites=true&w=majority`;
 
 // connecting to DB
 mongoose.connect(url)
