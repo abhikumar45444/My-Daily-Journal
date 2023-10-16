@@ -1,0 +1,14 @@
+<%- include("partials/header")  %>
+<h1>Delete post</h1>
+<p>Select post to delete</p>
+<form action="/delete" method="post">
+    <% for(post of posts){ %>
+        <input type="checkbox" id="<%=post.postTitle%>" class="checkbox" name="checkbox" value="<%=post._id %>" onchange="this.form.submit()">
+        <label class="delete-post-label" for="<%=post.postTitle %>"><%= post.postTitle %></label>
+        <p class="delete-post-p">
+            <%= `${post.postBody.substr(0,100)} ...` %>
+            <a href="/posts/<#%= post._id %>">Read More</a>
+        </p>
+    <% } %>
+</form>
+<%- include("partials/footer")  %>
